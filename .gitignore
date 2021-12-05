@@ -1,7 +1,10 @@
-#Strato-Flight
+# Strato-Flight
 tests/
 todo.txt
 Logging-Files/
+
+# Backup files
+*.backup
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
