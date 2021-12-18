@@ -9,12 +9,13 @@
 | Micro Servo 9g (DF9GMS)       | Turning the camera around the z-axis                 |
 
 #### Raspberry Pi Used Pinout
-| Pin # | Name          | Usage                             |
-| ---   | ---           | ---                               |
-| 04    | 5V DC-Power   | Power for servo motor and PCA9685 |
-| 03    | SDA1 (I2C)    | SDA for I2C network               |
-| 05    | SCL1 (I2C)    | SCL for I2C network               |
-| 39    | Ground        | GND                               |
+| Pin # | Cable Colour | Name          | Usage                             |
+| ---   | ---          | ---           | ---                               |
+| 01    | GREEN        | 3.3V DC-Power | Power for GY-271 compass module   |
+| 04    | RED          | 5V DC-Power   | Power for servo motor and PCA9685 |
+| 03    | WHITE        | SDA1 (I2C)    | SDA for I2C network               |
+| 05    | YELLOW       | SCL1 (I2C)    | SCL for I2C network               |
+| 39    | BLACK        | Ground        | GND                               |
 
 #### Python-Packages
 | Name                                                                    | Usage                                      |
