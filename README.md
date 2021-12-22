@@ -21,6 +21,7 @@
 | Name                                                                    | Usage                                      |
 | ---                                                                     | ---                                        |
 | picamera                                                                | See images of the Raspberry Pi NoIR-Cam V2 |
+| adafruit-blinka                                                         | I2C bus                                    |
 | [adafruit-pca9685](https://github.com/adafruit/Adafruit_Python_PCA9685) | Writing the PCA9685 PWM driver             |
 | [py_qmc5883l](https://github.com/RigacciOrg/py-qmc5883l)                | Reading the current magnitudal heading     |
 
