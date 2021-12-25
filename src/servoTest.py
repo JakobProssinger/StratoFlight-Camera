@@ -36,10 +36,8 @@ def setServoDutyCycle(_dutyCycle, _stepDirection):
     pca.channels[0].duty_cycle = _dutyCycle
     print(pca.channels[0].duty_cycle)
     time.sleep(0.05)
-    if _dutyCycle >= SERVO_DUTYCYCLE_MAX:
-        _stepDirection = -0x0010
-    if _dutyCycle <= SERVO_DUTYCYCLE_MIN:
-        _stepDirection = 0x0010
+    if _dutyCycle >= SERVO_DUTYCYCLE_MAX or _dutyCycle <= SERVO_DUTYCYCLE_MIN:
+        _stepDirection = -_stepDirection
     setServoDutyCycle(_dutyCycle, _stepDirection)
 
 
