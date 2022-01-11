@@ -18,12 +18,13 @@
 | 39    | BLACK        | Ground        | GND                               |
 
 #### Python-Packages
-| Name                                                                    | Usage                                      |
-| ---                                                                     | ---                                        |
-| picamera                                                                | See images of the Raspberry Pi NoIR-Cam V2 |
-| adafruit-blinka                                                         | I2C bus                                    |
-| [adafruit-pca9685](https://github.com/adafruit/Adafruit_Python_PCA9685) | Writing the PCA9685 PWM driver             |
-| [py_qmc5883l](https://github.com/RigacciOrg/py-qmc5883l)                | Reading the current magnitudal heading     |
+| Name                                                                                         | Usage                                      |
+| ---                                                                                          | ---                                        |
+| picamera                                                                                     | See images of the Raspberry Pi NoIR-Cam V2 |
+| [adafruit-blinka](https://github.com/adafruit/Adafruit_Blinka)                               | I2C bus                                    |
+| [adafruit-circuitpython-pca9685](https://github.com/adafruit/Adafruit_CircuitPython_PCA9685) | Controlling the PCA9685 PWM driver         |
+| [adafruit-circuitpython-motor](https://github.com/adafruit/Adafruit_CircuitPython_Motor)     | Controlling the servo motor                |
+| [py_qmc5883l](https://github.com/RigacciOrg/py-qmc5883l)                                     | Reading the current magnitudal heading     |
 
 ***
 
