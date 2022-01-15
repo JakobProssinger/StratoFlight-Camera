@@ -1,7 +1,7 @@
 ##############################################################################
 # StratoFlight II - The flying Pi                                            #
-# GY-271 Compass module test with QMC5883L IC                                #
-# File:     compassTest.py                                                   #
+# Test for the sunposition application                                       #
+# File:     sun.py                                                           #
 # Version:  0.0.1.0                                                          #
 # Author:   AblL / Leon Ablinger                                             #
 ##############################################################################
