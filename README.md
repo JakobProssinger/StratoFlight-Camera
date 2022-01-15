@@ -25,6 +25,7 @@
 | [adafruit-circuitpython-pca9685](https://github.com/adafruit/Adafruit_CircuitPython_PCA9685) | Controlling the PCA9685 PWM driver         |
 | [adafruit-circuitpython-motor](https://github.com/adafruit/Adafruit_CircuitPython_Motor)     | Controlling the servo motor                |
 | [py_qmc5883l](https://github.com/RigacciOrg/py-qmc5883l)                                     | Reading the current magnitudal heading     |
+| [sunposition](https://github.com/s-bear/sun-position)                                        | Evaluating the current position of the sun |
 
 ***
 
