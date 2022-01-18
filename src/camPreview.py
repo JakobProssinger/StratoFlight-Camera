@@ -15,23 +15,14 @@ import threading
 camera = PiCamera()
 camera.rotation=-90
 
-fileName = "/home/pi/Desktop/media/default"
-
-def takePicture():
-    camera.capture(fileName + ".jpg")
-
-
-def recordVideo(_secondsToRecord):
+def startVideoPreview():
     camera.start_preview()
-    camera.start_recording(fileName + ".h264")
-    camera.wait_recording(_secondsToRecord)
-    camera.stop_recording()
-    camera.stop_preview()
+    while True:
+        time.sleep(1)
 
 
 def main():
-    #takePicture()
-    recordVideo(120)
+    startVideoPreview()
 
 
 if __name__ == "__main__":

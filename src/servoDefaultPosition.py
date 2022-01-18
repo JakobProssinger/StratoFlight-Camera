@@ -13,15 +13,6 @@ pca.frequency = 50
 
 servo = servo.Servo(pca.channels[0], actuation_range=180)
 
-stepDir = 1
-angle = 45
-
-while True:
-    angle += stepDir
-    servo.angle = angle
-    print(angle)
-    time.sleep(10)
-    if angle > 135 or angle < 45:
-        stepDir = -stepDir
+servo.angle = 95
 
 pca.deinit()
