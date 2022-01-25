@@ -27,18 +27,22 @@ def get_date_time():
 def images_lowlight(image_counter):
     iso = 300
     shutter_speed = 500000
+    brightness = 60
     pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
         "ll-" + str(image_counter) + "-"
 
     while iso <= 800:
         camera.iso = iso
         camera.shutter_speed = shutter_speed
+        camera.brightness = brightness
 
-        camera.capture(pre_file_name + "ISO=" + str(iso) + ".jpg")
+        camera.capture(pre_file_name + "ISO=" + str(iso) + "ShSp=" + \
+            str(shutter_speed) + "BR=" + str(brightness) + ".jpg")
         image_counter += 1
 
         iso += 50
         shutter_speed += 100000
+        brightness += 10
 
     return image_counter
 
@@ -68,7 +72,7 @@ def images_brightness(image_counter):
     while brightness <= 100:
         camera.brightness = brightness
 
-        camera.capture(pre_file_name + "ISO=" + str(iso) + ".jpg")
+        camera.capture(pre_file_name + "BR=" + str(brightness) + ".jpg")
         image_counter += 1
 
         brightness += 10
