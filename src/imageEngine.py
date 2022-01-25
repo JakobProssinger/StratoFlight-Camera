@@ -62,7 +62,9 @@ def images_ISO(image_counter):
 def images_brightness(image_counter):
     brightness = 0
     camera.brightness = brightness
-    
+    pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
+        "ll-" + str(image_counter) + "-"
+
     while brightness <= 100:
         camera.brightness = brightness
 
