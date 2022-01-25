@@ -24,12 +24,29 @@ def get_date_time():
     return date_time
 
 
+def images_lowlight(image_counter):
+    iso = 300
+    shutter_speed = 500000
+    pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
+        "ll-" + str(image_counter) + "-"
+
+    while iso <= 800:
+        camera.iso = iso
+        camera.shutter_speed = shutter_speed
+
+        camera.capture(pre_file_name + "ISO=" + str(iso) + ".jpg")
+        image_counter += 1
+
+        iso += 50
+        shutter_speed += 100000
+
+    return image_counter
+
+
 def images_ISO(image_counter):
     iso = 0
     pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
         "ll-" + str(image_counter) + "-"
-
-    camera.shutter_speed = 1000000
 
     while iso <= 800:
         camera.iso = iso
@@ -37,7 +54,22 @@ def images_ISO(image_counter):
         camera.capture(pre_file_name + "ISO=" + str(iso) + ".jpg")
         image_counter += 1
 
-        iso += 100
+        iso += 50
+
+    return image_counter
+
+
+def images_brightness(image_counter):
+    brightness = 0
+    camera.brightness = brightness
+    
+    while brightness <= 100:
+        camera.brightness = brightness
+
+        camera.capture(pre_file_name + "ISO=" + str(iso) + ".jpg")
+        image_counter += 1
+
+        brightness += 10
 
     return image_counter
 
@@ -62,7 +94,7 @@ def getFreeSpace():
 def main():
     image_counter = 0
 
-    image_counter = images_ISO(image_counter)
+    image_counter = images_brightness(image_counter)
 
     sleepCounter(10)
 
