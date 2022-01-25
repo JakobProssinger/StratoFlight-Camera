@@ -50,7 +50,7 @@ def turnToAngle(_angle : int) -> None:
         try:
             servo.angle += stepDir
         except ValueError:
-            print("Error: Angle out of range.")
+            print("End reached.")
             break
         time.sleep(DELAY_BETWEEN_STEP)
         print(servo.angle)

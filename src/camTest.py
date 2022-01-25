@@ -23,7 +23,7 @@ def takePicture():
 
 def recordVideo(_secondsToRecord):
     camera.start_preview()
-    camera.start_recording(fileName + ".h264")
+    camera.start_recording(fileName + ".h265")
     camera.wait_recording(_secondsToRecord)
     camera.stop_recording()
     camera.stop_preview()
@@ -31,7 +31,7 @@ def recordVideo(_secondsToRecord):
 
 def main():
     #takePicture()
-    recordVideo(120)
+    recordVideo(10)
 
 
 if __name__ == "__main__":

@@ -19,8 +19,7 @@ angle = 45
 while True:
     angle += stepDir
     servo.angle = angle
-    print(angle)
-    time.sleep(10)
+    time.sleep(0.25)
     if angle > 135 or angle < 45:
         stepDir = -stepDir
 
