@@ -162,13 +162,17 @@ def sequence_of_consistent_images_lowlight_HDR(image_counter, picture_folder):
 
 
 def images_ISO():
+    camera = PiCamera()
+    camera.rotation = -90
+    camera.resolution = camera.MAX_RESOLUTION
     iso = 0
+
     while iso <= 800:
         camera.iso = iso
-        
+
         pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
         "ll-" + str(image_counter) + "-"
-        
+
         camera.capture(pre_file_name + "ISO=" + str(iso) + "-" + ".jpg")
         iso += 100
 
@@ -194,10 +198,6 @@ def main():
     picture_folder = "/home/pi/Desktop/media/engine-images"
     image_counter = 0
 
-    camera = PiCamera()
-    camera.rotation = -90
-    camera.resulotion = camera.MAX_RESOLUTION
-    
     images_ISO()
 
     sleepCounter(10)
