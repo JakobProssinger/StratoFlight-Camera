@@ -29,7 +29,7 @@ def images_ISO(image_counter):
     pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
         "ll-" + str(image_counter) + "-"
 
-    camera.shutter_speed = 200
+    camera.shutter_speed = 1000000
 
     while iso <= 800:
         camera.iso = iso
