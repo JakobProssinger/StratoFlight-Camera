@@ -26,14 +26,15 @@ def get_date_time():
 
 def images_ISO(image_counter):
     iso = 0
+    pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
+        "ll-" + str(image_counter) + "-"
+
+    camera.shutter_speed = 200
 
     while iso <= 800:
         camera.iso = iso
 
-        pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
-        "ll-" + str(image_counter) + "-"
-
-        camera.capture(pre_file_name + "ISO=" + str(iso) + "-" + ".jpg")
+        camera.capture(pre_file_name + "ISO=" + str(iso) + ".jpg")
         image_counter += 1
 
         iso += 100
@@ -45,6 +46,7 @@ def sleepCounter(time_s):
     while(time_s != 0):
         os.system('clear')
         print("Waiting " + str(time_s) + " seconds...")
+        print("Free space (mb): " + str(getFreeSpace))
         sleep(1)
         time_s -= 1
 
@@ -54,6 +56,7 @@ def getFreeSpace():
     st = os.statvfs(path)
     bytes_avail = (st.f_bavail * st.f_frsize)
     megabytes = bytes_avail / 1024 / 1024
+    return megabytes
 
 
 def main():
