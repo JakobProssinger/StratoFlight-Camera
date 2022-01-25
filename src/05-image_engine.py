@@ -1,21 +1,23 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-#
+##############################################################################
+# StratoFlight II - The flying Pi                                            #
+# Main application for testing the camera settings                           #
+# File:     image_engine.py                                                  #
+# Author:   AblL / Leon Ablinger                                             #
+##############################################################################
+
+import time
+from time import sleep
+from picamera import PiCamera
+
+##############################################################################
+
 def get_date_time():
-    import time
     date_time = time.strftime("%Y%m%d_%H%M%S")
     return date_time
 
 
 def capture_consistent_images \
        (frame_rate, iso, number_images, image_counter, picture_folder):
-    from time import sleep
-    from picamera import PiCamera
-    from fractions import Fraction
-    #
-    #frame_rate = 15
-    #iso = 100
-    #
     if(number_images<1):
         number_images = 1
     if(number_images>99):
@@ -49,9 +51,6 @@ def capture_consistent_images \
 
 #Capturing consistent images, for timelapse photography day only
 def sequence_of_consistent_images(number_images, image_counter, picture_folder):
-    from time import sleep
-    from picamera import PiCamera
-
     camera = PiCamera()
     camera.led = False
     camera.rotation=-90
@@ -81,9 +80,6 @@ def sequence_of_consistent_images(number_images, image_counter, picture_folder):
 
 #Capturing consistent images, lowlight
 def sequence_of_consistent_images_lowlight(number_images, image_counter, picture_folder):
-    from time import sleep
-    from picamera import PiCamera
-
     camera = PiCamera()
     camera.led = False
     camera.rotation=-90
@@ -115,9 +111,6 @@ def sequence_of_consistent_images_lowlight(number_images, image_counter, picture
 
 #Capturing consistent images, lowlight, for HDR
 def sequence_of_consistent_images_lowlight_HDR(image_counter, picture_folder):
-    from time import sleep
-    from picamera import PiCamera
-
     camera = PiCamera()
     camera.led = False
     camera.rotation=-90
@@ -169,7 +162,15 @@ def sequence_of_consistent_images_lowlight_HDR(image_counter, picture_folder):
 
 
 def images_ISO():
-    camera
+    iso = 0
+    while iso <= 800:
+        camera.iso = iso
+        
+        pre_file_name = picture_folder + "/" + get_date_time() + "-" + \
+        "ll-" + str(image_counter) + "-"
+        
+        camera.capture(pre_file_name + "ISO=" + str(iso) + "-" + ".jpg")
+        iso += 100
 
 
 def sleepCounter(time_s):
@@ -195,7 +196,9 @@ def main():
 
     camera = PiCamera()
     camera.rotation = -90
-    camera.
+    camera.resulotion = camera.MAX_RESOLUTION
+    
+    images_ISO()
 
     sleepCounter(10)
     print("Taking consistent images...")
