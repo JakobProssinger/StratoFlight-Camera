@@ -34,10 +34,10 @@ def images_ISO(image_counter):
         "ll-" + str(image_counter) + "-"
 
         camera.capture(pre_file_name + "ISO=" + str(iso) + "-" + ".jpg")
-        image_counter++
-        
+        image_counter += 1
+
         iso += 100
-    
+
     return image_counter
 
 
@@ -59,7 +59,7 @@ def getFreeSpace():
 def main():
     image_counter = 0
 
-    image_counter = images_ISO()
+    image_counter = images_ISO(image_counter)
 
     sleepCounter(10)
 
