@@ -6,6 +6,7 @@
 ##############################################################################
 
 import os
+import time
 
 ##############################################################################
 
@@ -17,3 +18,15 @@ def getAvailableSpace() -> int:
     bytes_avail = (st.f_bavail * st.f_frsize)
     megabytes = bytes_avail / 1024 / 1024
     return int(megabytes)
+
+
+# printAvailableSpace determines the current disk space available on the system
+# (path "/") and prints that value in the terminal.
+def printAvailableSpace() -> None:
+    while True:
+        path = '/'
+        st = os.statvfs(path)
+        bytes_avail = (st.f_bavail * st.f_frsize)
+        megabytes = bytes_avail / 1024 / 1024
+        print("Available disk space: " + stri(int(megabytes)) + " MB")
+        time.sleep(1)
