@@ -1,20 +1,19 @@
 ##############################################################################
 # StratoFlight II - The flying Pi                                            #
 # Main application for testing the camera settings                           #
-# File:     image_engine.py                                                  #
+# File:     imageEngine.py                                                   #
 # Author:   AblL / Leon Ablinger                                             #
 ##############################################################################
 
 import os
 from systemStatus import getAvailableSpace
 import time
-from time import sleep
 from picamera import PiCamera
 
 ##############################################################################
 
 camera = PiCamera()
-camera.rotation = -90
+camera.rotation = 0
 camera.resolution = camera.MAX_RESOLUTION
 picture_folder = "/home/pi/Desktop/media/engine-images"
 image_counter = 0
@@ -107,8 +106,8 @@ def sleepCounter(time_s: int) -> None:
         os.system('clear')
         print("Waiting " + str(time_s) + " seconds...")
         print("Free space (mb): " + str(getAvailableSpace()))
-        print("Current image counter: " + str(image_counter)
-        sleep(1)
+        print("Current image counter: " + str(image_counter))
+        time.sleep(1)
         time_s -= 1
 
 
