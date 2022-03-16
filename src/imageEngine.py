@@ -113,6 +113,7 @@ def sleepCounter(time_s: int) -> None:
 
 
 def main():
+    images_lowlight()
     sleepCounter(120)
 
 
